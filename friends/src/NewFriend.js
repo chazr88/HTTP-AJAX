@@ -3,8 +3,8 @@ import axios from 'axios';
 import uuidv4 from 'uuidv4'
 
 export class NewFriend extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
                 id: uuidv4(),
                 name: '',
@@ -18,16 +18,12 @@ export class NewFriend extends Component {
     }
 
     clickHandler = e => {
-        e.preventDefault();
 
         const { id, name, age, email } = this.state;
 
         axios.post('http://localhost:5000/friends', { id, name, age, email })
-          .then((result) => {
-            console.log(result);
-            console.log(result.data);
-          });
-      }
+
+    }
 
     render() {
         return (

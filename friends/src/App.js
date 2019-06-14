@@ -29,9 +29,9 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Route
-					path="/"
-					render={() => <FriendsList friends={this.state.friends} />}
-					exact
+				path="/"
+				render={props => <FriendsList {...props} friends={this.state.friends} />}
+				exact
 				/>
 				<Route
 				path="/edit/:id"
